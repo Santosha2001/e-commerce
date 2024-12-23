@@ -3,7 +3,6 @@ package com.ecommerce.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.ecommerce.enums.OrderStatus;
 import com.ecommerce.enums.UserRole;
 
 import jakarta.persistence.CascadeType;
@@ -51,7 +50,7 @@ public class User {
 	private UserRole role;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<OrderStatus> orderItemList;
+	private List<OrderItem> orderItemList;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
 	private Address address;
